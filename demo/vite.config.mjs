@@ -14,32 +14,6 @@ const alias = Object.entries(pkg.exports)
     replacement: root + target.slice(2),
   }));
 
-// Preload the hashed WOFF2 that the package CSS points at. The crossorigin
-// attribute matches the CORS-mode font request, so it's one download.
-function preloadFont() {
-  return {
-    name: "alawonn-preload-font",
-    enforce: "post",
-    transformIndexHtml: {
-      order: "post",
-      handler(html, ctx) {
-        const asset = Object.keys(ctx.bundle ?? {}).find((file) => /Alawonn-Regular-.*\.woff2$/.test(file));
-        if (!asset) return html;
-        return {
-          html,
-          tags: [
-            {
-              tag: "link",
-              attrs: { rel: "preload", href: `${ctx.server ? "" : "/alawonn-font/"}${asset}`, as: "font", type: "font/woff2", crossorigin: "" },
-              injectTo: "head-prepend",
-            },
-          ],
-        };
-      },
-    },
-  };
-}
-
 export default defineConfig({
   root: fileURLToPath(new URL(".", import.meta.url)),
   base: "/alawonn-font/",
@@ -47,7 +21,6 @@ export default defineConfig({
   define: {
     __VERSION__: JSON.stringify(pkg.version),
   },
-  plugins: [preloadFont()],
   build: {
     outDir: "dist",
     emptyOutDir: true,
