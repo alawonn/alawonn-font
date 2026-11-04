@@ -111,6 +111,47 @@ test("theme buttons switch and remember the theme", async ({ page }) => {
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
 });
 
+test("the theme change rises in with React Theme Tide", async ({ page, browserName }) => {
+  await page.emulateMedia({ colorScheme: "light", reducedMotion: "no-preference" });
+  await open(page);
+  await page.getByRole("button", { name: "Dark" }).click();
+  if (browserName === "chromium") {
+    // Chromium animates the tide through a View Transition.
+    await expect.poll(() => page.evaluate(() => document.getAnimations().length)).toBeGreaterThan(0);
+  }
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page.locator("body")).toHaveCSS("background-color", "rgb(0, 0, 0)", { timeout: 10_000 });
+});
+
+test("the phone menu opens, moves focus and closes", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 760 });
+  await open(page);
+  const button = page.getByRole("button", { name: "Menu" });
+  await expect(button).toBeVisible();
+  await expect(button).toHaveAttribute("aria-expanded", "false");
+  await button.click();
+  await expect(button).toHaveAttribute("aria-expanded", "true");
+  const menu = page.locator("#menu-list");
+  await expect(menu.getByRole("link")).toHaveCount(3);
+  await expect(menu.getByRole("link", { name: "Try it" })).toBeFocused();
+  await page.keyboard.press("ArrowDown");
+  await expect(menu.getByRole("link", { name: "Characters" })).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(menu).toBeHidden();
+  await expect(button).toBeFocused();
+  await button.click();
+  await menu.getByRole("link", { name: "Install" }).click();
+  await expect(menu).toBeHidden();
+  await expect(page).toHaveURL(/#install$/);
+});
+
+test("the desktop header shows links, not the menu", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await open(page);
+  await expect(page.getByRole("button", { name: "Menu" })).toBeHidden();
+  await expect(page.locator(".bar-nav").getByRole("link", { name: "Characters" })).toBeVisible();
+});
+
 test("no sideways scrolling at 320 px", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 });
   await open(page);
