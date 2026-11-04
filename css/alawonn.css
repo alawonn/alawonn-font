@@ -1,0 +1,9 @@
+/*! alawonn-font 1.0.0 | SIL Open Font License 1.1 | https://github.com/alawonn/alawonn-font */
+@font-face {
+  font-family: "Alawonn";
+  src: url("../dist/Alawonn-Regular.woff2") format("woff2");
+  font-style: normal;
+  /* One set of outlines for every weight, so bold text never gets a faked bold. */
+  font-weight: 100 900;
+  font-display: swap;
+}

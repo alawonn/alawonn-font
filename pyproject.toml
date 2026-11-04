@@ -1,0 +1,32 @@
+[project]
+name = "alawonn-font"
+version = "1.0.0"
+description = "Build and test tools for the Alawonn typeface"
+readme = "README.md"
+license = "OFL-1.1"
+requires-python = ">=3.12"
+dependencies = [
+  "fonttools[ufo,woff,unicode]>=4.68,<5",
+  "ufo2ft>=3.11,<4",
+  "ufoLib2>=0.19,<1",
+  "skia-pathops>=0.9,<1",
+  "ttfautohint-py>=0.6,<1",
+  "uharfbuzz>=0.57,<1",
+]
+
+[project.optional-dependencies]
+qa = [
+  "fontbakery>=1.1,<2",
+  "opentype-sanitizer>=9.2,<10",
+]
+
+[project.urls]
+Homepage = "https://alawonn.github.io/alawonn-font/"
+Repository = "https://github.com/alawonn/alawonn-font"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []

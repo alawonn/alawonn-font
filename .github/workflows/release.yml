@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+
+      - run: pip install -r requirements.txt && pip install -e . --no-deps
+      - run: npm ci
+
+      - name: Tag matches the package version
+        run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
+
+      - name: Release checks
+        run: python tools/check.py
+
+      - name: Tagged fonts match a clean build
+        run: git diff --exit-code -- dist specimen
+
+      - name: Assemble assets
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          mkdir -p release "release/alawonn-font-$version"
+          cp dist/Alawonn-Regular.ttf dist/Alawonn-Regular.woff2 release/
+          cp dist/Alawonn-Regular.ttf dist/Alawonn-Regular.woff2 OFL.txt TRADEMARKS.md FONTLOG.md README.md "release/alawonn-font-$version/"
+          (cd release && TZ=UTC find "alawonn-font-$version" -exec touch -d "@$(git log -1 --format=%ct)" {} + && zip -X -r "alawonn-font-$version.zip" "alawonn-font-$version" && rm -r "alawonn-font-$version")
+          npm pack --pack-destination release
+          (cd release && sha256sum Alawonn-Regular.ttf Alawonn-Regular.woff2 "alawonn-font-$version.zip" "alawonn-font-$version.tgz" > SHA256SUMS && cat SHA256SUMS)
+
+      - name: Create the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          awk -v v="$version" '$0 ~ "^## "v" " {on=1; next} /^## / && on {exit} on' FONTLOG.md > notes.md
+          {
+            echo
+            echo "Install: \`npm install alawonn-font@$version\`"
+            echo
+            echo "CDN: \`https://cdn.jsdelivr.net/npm/alawonn-font@$version/css/alawonn.css\`"
+            echo
+            echo "Fonts are licensed under the SIL Open Font License 1.1. Check downloads against \`SHA256SUMS\`."
+          } >> notes.md
+          gh release create "$GITHUB_REF_NAME" release/* --title "Alawonn $version" --notes-file notes.md --verify-tag

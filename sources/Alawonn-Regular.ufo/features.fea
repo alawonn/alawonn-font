@@ -1,0 +1,30 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn ROM;
+languagesystem latn MOL;
+
+@TopMarks = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hungarumlautcomb macroncomb ringcomb tildecomb];
+@Figures = [zero one two three four five six seven eight nine];
+@FiguresTabular = [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf];
+
+feature ccmp {
+  lookup DotlessBeforeTopMarks {
+    sub [i j]' @TopMarks by [dotlessi uni0237];
+  } DotlessBeforeTopMarks;
+} ccmp;
+
+feature locl {
+  script latn;
+  language ROM;
+  sub [Scedilla scedilla uni0162 uni0163] by [uni0218 uni0219 uni021A uni021B];
+  language MOL;
+  sub [Scedilla scedilla uni0162 uni0163] by [uni0218 uni0219 uni021A uni021B];
+} locl;
+
+feature tnum {
+  sub @Figures by @FiguresTabular;
+} tnum;
+
+feature pnum {
+  sub @FiguresTabular by @Figures;
+} pnum;

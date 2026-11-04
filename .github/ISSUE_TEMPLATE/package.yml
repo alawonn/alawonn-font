@@ -1,0 +1,18 @@
+name: Package or install problem
+description: The npm package, CDN link or desktop install doesn't work.
+labels: [package]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command or import you used, and the error or result.
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Tooling and versions
+      placeholder: Vite 8, Node 24, alawonn-font 1.0.0
+    validations:
+      required: true

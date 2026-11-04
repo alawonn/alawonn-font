@@ -1,0 +1,37 @@
+name: Rendering problem
+description: A character looks wrong, is missing, or doesn't display in an app or browser.
+labels: [rendering]
+body:
+  - type: input
+    id: characters
+    attributes:
+      label: Characters
+      description: The text or characters that look wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What you see
+      description: What's wrong, and what you expected. Screenshots help.
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: App or browser, version and operating system
+      placeholder: Firefox 157 on Windows 11
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Alawonn version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: size
+    attributes:
+      label: Font size
+      placeholder: 48px

@@ -1,0 +1,63 @@
+{
+  "name": "alawonn-font",
+  "version": "1.0.0",
+  "description": "Alawonn, a circular, sculpted display typeface with a cursive feel. CSS, WOFF2 and TTF.",
+  "license": "OFL-1.1",
+  "author": "Alawonn (https://alawonn.com)",
+  "homepage": "https://alawonn.github.io/alawonn-font/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alawonn/alawonn-font.git"
+  },
+  "bugs": "https://github.com/alawonn/alawonn-font/issues",
+  "keywords": [
+    "alawonn",
+    "font",
+    "typeface",
+    "display-font",
+    "webfont",
+    "woff2",
+    "ttf",
+    "css",
+    "ofl"
+  ],
+  "files": [
+    "css/alawonn.css",
+    "dist/Alawonn-Regular.ttf",
+    "dist/Alawonn-Regular.woff2",
+    "dist/SHA256SUMS",
+    "FONTLOG.md",
+    "OFL.txt",
+    "TRADEMARKS.md"
+  ],
+  "style": "css/alawonn.css",
+  "unpkg": "css/alawonn.css",
+  "jsdelivr": "css/alawonn.css",
+  "exports": {
+    ".": "./css/alawonn.css",
+    "./css": "./css/alawonn.css",
+    "./alawonn.css": "./css/alawonn.css",
+    "./woff2": "./dist/Alawonn-Regular.woff2",
+    "./ttf": "./dist/Alawonn-Regular.ttf",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "python tools/build.py",
+    "test": "python -m unittest discover -s tests && python tools/check.py",
+    "check": "python tools/check.py",
+    "demo": "vite demo",
+    "demo:build": "vite build demo",
+    "demo:preview": "vite preview demo",
+    "demo:test": "playwright test",
+    "consumers": "node tests/consumers/run.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "vite": "8.3.5"
+  }
+}

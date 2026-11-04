@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alawonn, a display typeface</title>
+    <meta name="description" content="Alawonn is a circular, sculpted display typeface with a cursive feel. Try it, browse every character and download it free." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
+    <meta property="og:title" content="Alawonn, a display typeface" />
+    <meta property="og:description" content="A circular, sculpted display typeface with a cursive feel. Free under the SIL Open Font License." />
+    <meta property="og:url" content="https://alawonn.github.io/alawonn-font/" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://alawonn.github.io/alawonn-font/" />
+    <link rel="icon" href="/alawonn-font/favicon.svg" type="image/svg+xml" />
+    <script>
+      try {
+        const saved = localStorage.getItem("alawonn-theme");
+        if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#tester">Skip to the type tester</a>
+
+    <header class="bar">
+      <a class="bar-name" href="#top">alawonn-font</a>
+      <nav class="bar-nav" aria-label="Sections">
+        <a href="#tester">Try it</a>
+        <a href="#characters">Characters</a>
+        <a href="#install">Install</a>
+      </nav>
+      <div class="theme" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-ring" aria-hidden="true"></div>
+        <h1 id="hero-title" class="hero-word">alawonn</h1>
+        <p class="hero-lead">A circular, sculpted display typeface with a cursive feel. Use it for headings, names and short lines of display text.</p>
+        <p class="hero-meta">
+          Version <span data-version></span> · Free for any project under the
+          <a href="https://github.com/alawonn/alawonn-font/blob/main/OFL.txt">SIL Open Font License 1.1</a>
+        </p>
+        <div class="hero-actions">
+          <a class="button button-solid" data-download="ttf" href="#">Download TTF</a>
+          <a class="button" data-download="woff2" href="#">WOFF2</a>
+          <a class="button" data-download="zip" href="#">Zip with license</a>
+        </div>
+        <div class="command">
+          <code id="hero-command">npm install alawonn-font</code>
+          <button type="button" class="copy" data-copy-target="hero-command">Copy</button>
+        </div>
+      </section>
+
+      <div class="rule" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 22 C 260 4, 520 4, 760 16 S 1080 34, 1200 18 L 1200 21 C 1080 37, 960 30, 760 20 S 260 10, 0 25 Z" /></svg></div>
+
+      <section id="tester" class="section" aria-labelledby="tester-title">
+        <p class="section-number" aria-hidden="true">01</p>
+        <h2 id="tester-title">Try it</h2>
+        <div class="tester-controls">
+          <div class="size-control">
+            <span><label for="size">Size</label> <output id="size-output" for="size" aria-hidden="true">96 px</output></span>
+            <input id="size" type="range" min="16" max="240" step="1" value="96" aria-valuetext="96 pixels" />
+          </div>
+          <button type="button" class="link-button" id="tester-reset">Reset text</button>
+        </div>
+        <label class="visually-hidden" for="tester-text">Your text, shown in Alawonn</label>
+        <textarea id="tester-text" class="tester-text specimen" rows="3" spellcheck="false">Sculpted curves, round and calm.</textarea>
+      </section>
+
+      <section class="section" aria-labelledby="sizes-title">
+        <p class="section-number" aria-hidden="true">02</p>
+        <h2 id="sizes-title">Sizes</h2>
+        <ul class="waterfall">
+          <li><span class="waterfall-size">20 px</span><span class="specimen" style="font-size: 20px">Morning light on the open water</span></li>
+          <li><span class="waterfall-size">32 px</span><span class="specimen" style="font-size: 32px">Morning light on the open water</span></li>
+          <li><span class="waterfall-size">48 px</span><span class="specimen" style="font-size: 48px">Morning light on the water</span></li>
+          <li><span class="waterfall-size">72 px</span><span class="specimen" style="font-size: 72px">Open water</span></li>
+          <li><span class="waterfall-size">144 px</span><span class="specimen waterfall-xl">Calm</span></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="alphabet-title">
+        <p class="section-number" aria-hidden="true">03</p>
+        <h2 id="alphabet-title">Alphabet</h2>
+        <p class="specimen specimen-block">ABCDEFGHIJKLM<br />NOPQRSTUVWXYZ</p>
+        <p class="specimen specimen-block">abcdefghijklm<br />nopqrstuvwxyz</p>
+      </section>
+
+      <section class="section" aria-labelledby="figures-title">
+        <p class="section-number" aria-hidden="true">04</p>
+        <h2 id="figures-title">Figures, punctuation and symbols</h2>
+        <div class="pairs">
+          <div>
+            <h3>Figures</h3>
+            <p class="specimen specimen-row">0123456789</p>
+            <h3>Tabular figures</h3>
+            <p class="specimen specimen-row tabular">1111<br />0000</p>
+          </div>
+          <div>
+            <h3>Punctuation</h3>
+            <p class="specimen specimen-row">. , : ; ! ? ¡ ¿ … · • ‘ ’ “ ” ‚ „ « » ‹ › - – — ( ) [ ] { } / \ | ¦ &amp; @ # * † ‡ § ¶ _</p>
+            <h3>Currency and math</h3>
+            <p class="specimen specimen-row">$ ¢ £ ¤ ¥ € ƒ % ‰ + − × ÷ = ≠ &lt; &gt; ≤ ≥ ± ¬ ≈ ° ½ ¼ ¾ ¹ ² ³ © ® ™</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="accents-title">
+        <p class="section-number" aria-hidden="true">05</p>
+        <h2 id="accents-title">Accents</h2>
+        <p class="section-lead">Accented capitals and lowercase for Western, Central and Eastern European languages, Turkish, the Baltic languages and Haitian Creole.</p>
+        <p class="specimen specimen-block accents">Ångström Łódź Garçon Güneş Ľubica Őrség Žemaitė Ħamrun Ærø Țară Šibenik Ēriks</p>
+        <h3>Combining accents</h3>
+        <p class="section-lead">The 15 combining accents attach to any letter and stack on top of each other.</p>
+        <ul class="combining">
+          <li><span class="specimen" lang="und">x&#x301;</span><span class="note">x + acute</span></li>
+          <li><span class="specimen" lang="und">q&#x303;</span><span class="note">q + tilde</span></li>
+          <li><span class="specimen" lang="und">m&#x304;</span><span class="note">m + macron</span></li>
+          <li><span class="specimen" lang="und">u&#x308;&#x301;</span><span class="note">u + diaeresis + acute</span></li>
+          <li><span class="specimen" lang="und">i&#x30B;</span><span class="note">i + double acute</span></li>
+          <li><span class="specimen" lang="und">k&#x326;</span><span class="note">k + comma below</span></li>
+        </ul>
+      </section>
+
+      <section id="characters" class="section" aria-labelledby="characters-title">
+        <p class="section-number" aria-hidden="true">06</p>
+        <h2 id="characters-title">Every character</h2>
+        <div class="finder">
+          <label class="search">
+            <span>Find a character</span>
+            <input id="char-search" type="search" placeholder="é, euro, U+00E9" autocomplete="off" />
+          </label>
+          <div class="filters" role="group" aria-label="Character groups" id="char-filters"></div>
+        </div>
+        <p id="char-count" class="count" aria-live="polite"></p>
+        <div class="char-layout">
+          <ul id="char-grid" class="char-grid" aria-label="Characters"></ul>
+          <aside class="char-detail" aria-labelledby="char-detail-name" id="char-detail">
+            <p class="char-detail-glyph specimen" id="char-detail-glyph" aria-hidden="true"></p>
+            <p class="char-detail-name" id="char-detail-name"></p>
+            <p class="char-detail-code" id="char-detail-code"></p>
+            <button type="button" class="copy" id="char-copy">Copy character</button>
+          </aside>
+        </div>
+      </section>
+
+      <section id="install" class="section" aria-labelledby="install-title">
+        <p class="section-number" aria-hidden="true">07</p>
+        <h2 id="install-title">Install</h2>
+        <div class="tabs" role="tablist" aria-label="Package manager" id="pm-tabs">
+          <button type="button" role="tab" id="tab-npm" aria-controls="pm-panel" aria-selected="true" data-command="npm install alawonn-font">npm</button>
+          <button type="button" role="tab" id="tab-pnpm" aria-controls="pm-panel" aria-selected="false" tabindex="-1" data-command="pnpm add alawonn-font">pnpm</button>
+          <button type="button" role="tab" id="tab-yarn" aria-controls="pm-panel" aria-selected="false" tabindex="-1" data-command="yarn add alawonn-font">Yarn</button>
+          <button type="button" role="tab" id="tab-bun" aria-controls="pm-panel" aria-selected="false" tabindex="-1" data-command="bun add alawonn-font">Bun</button>
+          <button type="button" role="tab" id="tab-deno" aria-controls="pm-panel" aria-selected="false" tabindex="-1" data-command="deno add npm:alawonn-font">Deno</button>
+        </div>
+        <div class="command" role="tabpanel" id="pm-panel" aria-labelledby="tab-npm">
+          <code id="pm-command">npm install alawonn-font</code>
+          <button type="button" class="copy" data-copy-target="pm-command">Copy</button>
+        </div>
+
+        <div class="install-grid">
+          <div>
+            <h3>Use it</h3>
+            <p>Import the package once, in your app's entry file or root layout:</p>
+            <div class="command">
+              <code id="use-import">import "alawonn-font";</code>
+              <button type="button" class="copy" data-copy-target="use-import">Copy</button>
+            </div>
+            <p>Then set the family:</p>
+            <div class="command">
+              <code id="use-css">font-family: "Alawonn", cursive;</code>
+              <button type="button" class="copy" data-copy-target="use-css">Copy</button>
+            </div>
+            <p>This works with React, Vue, Svelte, Astro and Next.js. In Nuxt, add <code>"alawonn-font"</code> to <code>css</code> in <code>nuxt.config.ts</code>. In React Native, load <code>alawonn-font/dist/Alawonn-Regular.ttf</code> with <code>expo-font</code>.</p>
+          </div>
+          <div>
+            <h3>No build step</h3>
+            <p>Link the stylesheet from a CDN:</p>
+            <div class="command command-wrap">
+              <code id="cdn-link"></code>
+              <button type="button" class="copy" data-copy-target="cdn-link">Copy</button>
+            </div>
+            <h3>Desktop apps</h3>
+            <p>Download the TTF and install it. On Windows, right-click and choose Install. On a Mac, open it and choose Install in Font Book. It appears as Alawonn in your font menu.</p>
+          </div>
+        </div>
+        <p class="more"><a href="https://github.com/alawonn/alawonn-font#readme">Full setup for each framework</a></p>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="rule rule-small" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 22 C 260 4, 520 4, 760 16 S 1080 34, 1200 18 L 1200 21 C 1080 37, 960 30, 760 20 S 260 10, 0 25 Z" /></svg></div>
+      <p>Alawonn <span data-version></span>. Font licensed under the <a href="https://github.com/alawonn/alawonn-font/blob/main/OFL.txt">SIL Open Font License 1.1</a>. The Alawonn name and trademarks aren't covered by the font license; see <a href="https://github.com/alawonn/alawonn-font/blob/main/TRADEMARKS.md">trademarks</a>.</p>
+      <p>
+        <a href="https://github.com/alawonn/alawonn-font">GitHub</a> ·
+        <a href="https://www.npmjs.com/package/alawonn-font">npm</a> ·
+        <a href="https://github.com/alawonn/alawonn-font/releases/latest">Releases</a> ·
+        <a href="https://alawonn.com">alawonn.com</a>
+      </p>
+    </footer>
+  </body>
+</html>
