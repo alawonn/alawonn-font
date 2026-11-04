@@ -197,7 +197,9 @@ function resolves(dir, runtime = "node") {
     deno: [tool("deno"), ["eval", script]],
   };
   const out = run(...commands[runtime], dir);
-  const [css, woff2, ttf] = out.trim().split(" ");
+  // Yarn 1 wraps the output in its own banner lines, so pick ours.
+  const line = out.split("\n").find((l) => l.includes("alawonn.css")) ?? out;
+  const [css, woff2, ttf] = line.trim().split(" ");
   if (!css.endsWith("/css/alawonn.css") || !woff2.endsWith("/dist/Alawonn-Regular.woff2") || !ttf.endsWith("/dist/Alawonn-Regular.ttf")) {
     throw new Error(`unexpected resolution: ${out}`);
   }
