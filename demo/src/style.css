@@ -176,18 +176,103 @@ a {
   }
 }
 
-.theme {
-  display: inline-flex;
+/* Phone menu: a dropdown with the section links. */
+.menu {
+  position: relative;
   margin-left: auto;
-  padding: 3px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
 }
 
 @media (min-width: 720px) {
-  .theme {
-    margin-left: 8px;
+  .menu {
+    display: none;
   }
+}
+
+.menu-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* On the narrowest phones the button shows only its icon. */
+@media (max-width: 400px) {
+  .bar {
+    gap: 10px;
+  }
+  .menu-button {
+    width: 40px;
+    padding: 0;
+    justify-content: center;
+  }
+  .menu-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.menu-button svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.menu-button[aria-expanded="true"] {
+  border-color: var(--ink);
+}
+
+.menu-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  display: grid;
+  min-width: 188px;
+  padding: 6px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.14);
+}
+
+.menu-list[hidden] {
+  display: none;
+}
+
+.menu-list a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 9px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.menu-list a:hover,
+.menu-list a:focus-visible {
+  background: var(--surface);
+}
+
+.theme {
+  display: inline-flex;
+  margin-left: 8px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
 }
 
 .theme button {

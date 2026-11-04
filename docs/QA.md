@@ -14,7 +14,7 @@ What gets checked, how, and the results for the current release.
 | fontTools round trip | same | Every table decompiles and recompiles with fontTools 4.68. |
 | FontBakery | same | Universal profile, FontBakery 1.1.0. |
 | Package | same | The npm tarball holds exactly the expected 9 files, every export points at a packaged file, the CSS `url()` resolves inside the package, and `SHA256SUMS` matches. |
-| Demo | `npm run demo:test` | Playwright in Chromium, Firefox, WebKit and a Pixel 7 profile: the hero is live text in the packaged font, the tester and size control work, all 378 characters are listed and searchable, tabs work by keyboard, nothing scrolls sideways at 320 px, one font download, size budgets, axe (WCAG 2.2 AA) in light, dark and high-contrast modes, and visual snapshots of the specimens. |
+| Demo | `npm run demo:test` | Playwright in Chromium, Firefox, WebKit and a Pixel 7 profile: the hero is live text in the packaged font, the theme change runs through React Theme Tide, the phone menu opens, moves focus and closes, the tester and size control work, all 378 characters are listed and searchable, tabs work by keyboard, nothing scrolls sideways at 320 px, one font download, size budgets, axe (WCAG 2.2 AA) in light, dark and high-contrast modes, and visual snapshots of the specimens. |
 | Framework examples | `npm run consumers` | Packs the tarball and builds each README example in a clean project, then loads the result in Chromium and checks the font is used: npm, pnpm, Yarn (Plug'n'Play), Bun, Deno, plain HTML, React with Vite, Vue with Vite, SvelteKit, Astro, Next.js App Router (static export), Nuxt, and Expo (Android bundle and web). |
 
 ## FontBakery result for 1.0.0

@@ -26,6 +26,14 @@ export default defineConfig({
     emptyOutDir: true,
     assetsInlineLimit: 0,
     target: "es2022",
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // react-theme-tide's hook carries "use client"; the demo only uses
+        // the framework-free themeTide function, so the directive is moot.
+        if (warning.code === "MODULE_LEVEL_DIRECTIVE") return;
+        warn(warning);
+      },
+    },
   },
   server: { port: 5181, strictPort: true },
   preview: { port: 5182, strictPort: true },

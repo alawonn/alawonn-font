@@ -58,6 +58,8 @@
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
     "@playwright/test": "1.64.1",
+    "react": "19.3.1",
+    "react-theme-tide": "0.2.5",
     "vite": "8.3.5"
   }
 }

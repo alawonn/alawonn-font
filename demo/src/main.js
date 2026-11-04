@@ -1,4 +1,5 @@
 import "alawonn-font";
+import { themeTide } from "react-theme-tide";
 import "./style.css";
 import groups from "./characters.json";
 
@@ -26,17 +27,61 @@ function showTheme() {
   const theme = currentTheme();
   for (const button of $$("[data-theme-choice]")) button.setAttribute("aria-pressed", String(button.dataset.themeChoice === theme));
 }
+// React Theme Tide reveals the new theme with a rising swell. These settings
+// are this demo's own: a slow, broad wave that pauses near the middle.
+const TIDE = {
+  riseDuration: 1100,
+  holdDuration: 700,
+  finishDuration: 800,
+  holdLevel: 0.5,
+  waveAmplitude: 16,
+  waveLength: 360,
+  waveSpeed: 0.6,
+};
+
 for (const button of $$("[data-theme-choice]")) {
   button.addEventListener("click", () => {
-    document.documentElement.dataset.theme = button.dataset.themeChoice;
-    try {
-      localStorage.setItem("alawonn-theme", button.dataset.themeChoice);
-    } catch {}
-    showTheme();
+    const choice = button.dataset.themeChoice;
+    if (choice === currentTheme()) return;
+    themeTide(() => {
+      document.documentElement.dataset.theme = choice;
+      try {
+        localStorage.setItem("alawonn-theme", choice);
+      } catch {}
+      showTheme();
+    }, TIDE);
   });
 }
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", showTheme);
 showTheme();
+
+// Phone menu
+const menuButton = $("#menu-button");
+const menuList = $("#menu-list");
+function setMenu(open, { focus = false } = {}) {
+  menuList.hidden = !open;
+  menuButton.setAttribute("aria-expanded", String(open));
+  if (open) $("a", menuList).focus();
+  else if (focus) menuButton.focus();
+}
+menuButton.addEventListener("click", () => setMenu(menuList.hidden));
+menuList.addEventListener("click", (event) => {
+  if (event.target.closest("a")) setMenu(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !menuList.hidden) setMenu(false, { focus: true });
+});
+document.addEventListener("click", (event) => {
+  if (!menuList.hidden && !event.target.closest(".menu")) setMenu(false);
+});
+menuList.addEventListener("keydown", (event) => {
+  const links = $$("a", menuList);
+  const index = links.indexOf(document.activeElement);
+  const next = { ArrowDown: index + 1, ArrowUp: index - 1, Home: 0, End: links.length - 1 }[event.key];
+  if (next === undefined) return;
+  event.preventDefault();
+  links[(next + links.length) % links.length].focus();
+});
 
 // Copy buttons
 async function copy(text, button) {
