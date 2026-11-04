@@ -33,7 +33,7 @@ The one warning is `contour_count`, and it's intentional. Many Alawonn letters a
 | Google Chrome 156, Windows 11 | Same | Same. |
 | Chromium 156, Linux | Playwright test suite | All demo tests pass. |
 | Firefox 157, Linux | Playwright test suite | All demo tests pass. |
-| WebKit, Linux | Playwright test suite in CI | Runs on every push in GitHub Actions. |
+| WebKit 27.2, Linux | Playwright test suite in GitHub Actions | All demo tests pass. |
 | Windows 11 desktop | Per-user install of the TTF, then WPF and GDI+ | Registers as family "Alawonn", style "Regular", "Version 1.000", 390 glyphs, 378 characters, installable embedding. GDI+ renders it with ClearType at 20, 32, 48 and 72 px. |
 | Linux desktop | `~/.local/share/fonts` and `fc-cache` | fontconfig lists `Alawonn:style=Regular` with the full character set. |
 
