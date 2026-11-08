@@ -92,11 +92,11 @@ export default function App() {
 No build step? Link the stylesheet from jsDelivr or UNPKG. Pin the version so your page never changes under you.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alawonn-font@2.0.0/css/alawonn.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alawonn-font@2.0.1/css/alawonn.css">
 ```
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/alawonn-font@2.0.0/css/alawonn.css">
+<link rel="stylesheet" href="https://unpkg.com/alawonn-font@2.0.1/css/alawonn.css">
 ```
 
 The stylesheet loads the WOFF2 from the same CDN and version.
@@ -113,7 +113,7 @@ It shows up as **Alawonn** in your font menu. Each release also has a zip with t
 
 ## Characters
 
-378 characters, enough for English, French, Spanish, Portuguese, German, Italian, Dutch, the Nordic languages, Polish, Czech, Slovak, Hungarian, Romanian, Turkish, the Baltic languages, Maltese, Esperanto and Haitian Creole:
+378 characters, enough for English, French, Spanish, Portuguese, German, Italian, Dutch, the Nordic languages, Polish, Czech, Slovak, Hungarian, Romanian, Turkish, the Baltic languages, Maltese, Esperanto and of course, Haitian Creole:
 
 - Basic Latin, Latin-1 Supplement and Latin Extended-A, complete except the soft hyphen
 - Windows-1252, complete
