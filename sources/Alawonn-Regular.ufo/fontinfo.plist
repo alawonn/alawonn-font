@@ -51,9 +51,9 @@
     <key>openTypeNameManufacturerURL</key>
     <string>https://alawonn.com</string>
     <key>openTypeNameUniqueID</key>
-    <string>2.000;ALWN;Alawonn-Regular</string>
+    <string>2.001;ALWN;Alawonn-Regular</string>
     <key>openTypeNameVersion</key>
-    <string>Version 2.000</string>
+    <string>Version 2.001</string>
     <key>openTypeOS2CodePageRanges</key>
     <array>
       <integer>0</integer>
@@ -108,7 +108,7 @@
     <key>versionMajor</key>
     <integer>2</integer>
     <key>versionMinor</key>
-    <integer>0</integer>
+    <integer>1</integer>
     <key>xHeight</key>
     <integer>700</integer>
   </dict>
