@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-Alawonn is a circular, sculpted display typeface with a cursive feel. Use it for headings, names and short lines of display text.
+Alawonn is our official typeface, a circular, sculpted display face with a cursive feel. Use it for headings, names and short lines of display text.
 
 [Live demo](https://alawonn.github.io/alawonn-font/) · [npm](https://www.npmjs.com/package/alawonn-font) · [Download](https://github.com/alawonn/alawonn-font/releases/latest) · [License (OFL 1.1)](https://github.com/alawonn/alawonn-font/blob/main/OFL.txt)
 
@@ -92,11 +92,11 @@ export default function App() {
 No build step? Link the stylesheet from jsDelivr or UNPKG. Pin the version so your page never changes under you.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alawonn-font@1.0.0/css/alawonn.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alawonn-font@2.0.0/css/alawonn.css">
 ```
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/alawonn-font@1.0.0/css/alawonn.css">
+<link rel="stylesheet" href="https://unpkg.com/alawonn-font@2.0.0/css/alawonn.css">
 ```
 
 The stylesheet loads the WOFF2 from the same CDN and version.
@@ -124,6 +124,8 @@ It shows up as **Alawonn** in your font menu. Each release also has a zip with t
 - 15 combining accents that attach to any letter
 
 OpenType features: kerning, mark positioning, dotless i and j under accents, Romanian comma-below (`lang="ro"`) and tabular figures (`font-variant-numeric: tabular-nums`).
+
+Alawonn has one case. Capitals show as their lowercase letters at the same size, so `ALAWONN` and `alawonn` look the same. The text keeps its case for copying, search and screen readers.
 
 See every character in the [demo](https://alawonn.github.io/alawonn-font/#characters).
 

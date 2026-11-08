@@ -2,7 +2,15 @@
 
 This file records changes to the Alawonn typeface, as the SIL Open Font License recommends.
 
-Alawonn is a circular, sculpted display typeface with a cursive feel. It's made for headings, names and short lines of display text. The font is released under the SIL Open Font License 1.1 with the Reserved Font Name "Alawonn". The source is a UFO in `sources/`, built with the tools in `tools/`.
+Alawonn is our official typeface, a circular, sculpted display face with a cursive feel. It's made for headings, names and short lines of display text. The font is released under the SIL Open Font License 1.1 with the Reserved Font Name "Alawonn". The source is a UFO in `sources/`, built with the tools in `tools/`.
+
+## 2.0.0 (2026-11-08)
+
+- New design. Letters, figures, symbols and marks share a 16 degree slant, crescent strokes that swell in the middle and soften or taper at the ends, and narrow open channels between the strokes.
+- One case. Capitals show as their lowercase letters at the same size, so text looks the same however it's typed. The text itself keeps its case for copying, search and screen readers.
+- In Turkish and Azeri text (`lang="tr"` or `lang="az"`), I shows the dotless letter.
+- Spacing and class kerning redone for the new shapes.
+- Widths changed, so text reflows compared with 1.x.
 
 ## 1.0.0 (2026-11-04)
 

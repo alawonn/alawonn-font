@@ -2,6 +2,6 @@
 <glyph name="seven.tf" format="2">
   <advance width="640"/>
   <outline>
-    <component base="seven" xOffset="52"/>
+    <component base="seven" xOffset="38"/>
   </outline>
 </glyph>

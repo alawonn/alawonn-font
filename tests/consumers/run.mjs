@@ -37,7 +37,10 @@ function run(command, commandArgs, cwd, env = {}) {
     maxBuffer: 64 * 1024 * 1024,
   });
   if (result.status !== 0) {
-    throw new Error(`${command} ${commandArgs.join(" ")} failed in ${cwd}\n${result.stdout.slice(-3000)}\n${result.stderr.slice(-3000)}`);
+    const stdout = result.stdout ?? "";
+    const stderr = result.stderr ?? "";
+    const cause = result.error ? `\n${result.error.name}: ${result.error.message}` : "";
+    throw new Error(`${command} ${commandArgs.join(" ")} failed in ${cwd}${cause}\n${stdout.slice(-3000)}\n${stderr.slice(-3000)}`);
   }
   return result.stdout;
 }
@@ -48,8 +51,9 @@ function tool(name) {
   const dir = join(work, ".tools");
   if (!existsSync(join(dir, "node_modules/.bin", name))) {
     mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, "package.json"), "{}");
-    run("npm", ["install", "--no-audit", "--no-fund", name], dir);
+    if (!existsSync(join(dir, "package.json"))) writeFileSync(join(dir, "package.json"), "{}");
+    const packageName = name === "yarn" ? "@yarnpkg/cli-dist" : name;
+    run("npm", ["install", "--no-audit", "--no-fund", packageName], dir);
   }
   return join(dir, "node_modules/.bin", name);
 }
@@ -191,12 +195,12 @@ const H1 = '<h1 style="font-family: &quot;Alawonn&quot;, cursive; font-size: 72p
 
 function resolves(dir, runtime = "node") {
   const script = 'console.log(import.meta.resolve("alawonn-font"), import.meta.resolve("alawonn-font/woff2"), import.meta.resolve("alawonn-font/ttf"))';
-  const commands = {
-    node: ["node", ["--input-type=module", "-e", script]],
-    yarn: ["yarn", ["node", "--input-type=module", "-e", script]],
-    deno: [tool("deno"), ["eval", script]],
-  };
-  const out = run(...commands[runtime], dir);
+  const command = runtime === "yarn"
+    ? [tool("yarn"), ["node", "--input-type=module", "-e", script]]
+    : runtime === "deno"
+      ? [tool("deno"), ["eval", script]]
+      : ["node", ["--input-type=module", "-e", script]];
+  const out = run(...command, dir);
   // Yarn 1 wraps the output in its own banner lines, so pick ours.
   const line = out.split("\n").find((l) => l.includes("alawonn.css")) ?? out;
   const [css, woff2, ttf] = line.trim().split(" ");
@@ -221,8 +225,9 @@ await check("pnpm", async (dir) => {
 await check("yarn", async (dir) => {
   write(dir, { "package.json": { name: "c-yarn", private: true, type: "module" } });
   // Yarn's default Plug'n'Play install; `yarn node` resolves through it.
-  run("yarn", ["add", registryVersion ? spec : `alawonn-font@file:${spec}`], dir, { YARN_ENABLE_IMMUTABLE_INSTALLS: "false" });
-  return `${resolves(dir, "yarn")} (Yarn ${run("yarn", ["--version"], dir).trim()})`;
+  const yarn = tool("yarn");
+  run(yarn, ["add", registryVersion ? spec : `alawonn-font@file:${spec}`], dir, { YARN_ENABLE_IMMUTABLE_INSTALLS: "false" });
+  return `${resolves(dir, "yarn")} (Yarn ${run(yarn, ["--version"], dir).trim()})`;
 });
 
 await check("bun", async (dir) => {

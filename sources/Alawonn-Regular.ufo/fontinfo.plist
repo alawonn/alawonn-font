@@ -5,7 +5,7 @@
     <key>ascender</key>
     <integer>1170</integer>
     <key>capHeight</key>
-    <integer>880</integer>
+    <integer>700</integer>
     <key>copyright</key>
     <string>Copyright (c) 2026 Alawonn (https://alawonn.com), with Reserved Font Name "Alawonn".</string>
     <key>descender</key>
@@ -51,9 +51,9 @@
     <key>openTypeNameManufacturerURL</key>
     <string>https://alawonn.com</string>
     <key>openTypeNameUniqueID</key>
-    <string>1.000;ALWN;Alawonn-Regular</string>
+    <string>2.000;ALWN;Alawonn-Regular</string>
     <key>openTypeNameVersion</key>
-    <string>Version 1.000</string>
+    <string>Version 2.000</string>
     <key>openTypeOS2CodePageRanges</key>
     <array>
       <integer>0</integer>
@@ -106,7 +106,7 @@
     <key>unitsPerEm</key>
     <integer>1000</integer>
     <key>versionMajor</key>
-    <integer>1</integer>
+    <integer>2</integer>
     <key>versionMinor</key>
     <integer>0</integer>
     <key>xHeight</key>
