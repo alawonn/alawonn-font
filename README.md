@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-Alawonn is a circular, sculpted display typeface with a cursive feel. Use it for headings, names and short lines of display text.
+Alawonn is our official typeface, a circular, sculpted display face with a cursive feel. Use it for headings, names and short lines of display text.
 
 [Live demo](https://alawonn.github.io/alawonn-font/) · [npm](https://www.npmjs.com/package/alawonn-font) · [Download](https://github.com/alawonn/alawonn-font/releases/latest) · [License (OFL 1.1)](https://github.com/alawonn/alawonn-font/blob/main/OFL.txt)
 

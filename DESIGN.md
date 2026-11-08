@@ -1,6 +1,6 @@
 # Design
 
-Alawonn is a display typeface: circular, sculpted and cursive in feel, with a clear slant. It's drawn for headings, names, packaging, interface titles and short expressive lines. It isn't meant for paragraphs of body text.
+Alawonn is our official typeface, a display face that is circular, sculpted and cursive in feel, with a clear slant. It's drawn for headings, names, packaging, interface titles and short expressive lines. It isn't meant for paragraphs of body text.
 
 ## Character
 
