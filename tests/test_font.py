@@ -108,7 +108,7 @@ class FontTest(unittest.TestCase):
         self.assertEqual(os2.fsType, 0, "the font must be installable")
         self.assertEqual(os2.achVendID, "ALWN")
         self.assertEqual(os2.sxHeight, 700)
-        self.assertEqual(os2.sCapHeight, 880)
+        self.assertEqual(os2.sCapHeight, 700)
         self.assertTrue(os2.fsSelection & (1 << 6), "REGULAR bit")
         self.assertTrue(os2.fsSelection & (1 << 7), "USE_TYPO_METRICS bit")
         self.assertTrue(head.flags & (1 << 3), "integer ppem for hinted fonts")

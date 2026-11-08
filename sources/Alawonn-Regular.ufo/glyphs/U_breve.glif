@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="Ubreve" format="2">
-  <advance width="974"/>
+  <advance width="820"/>
   <unicode hex="016C"/>
   <outline>
-    <component base="U"/>
-    <component base="brevecomb" xOffset="558" yOffset="116"/>
+    <component base="u"/>
+    <component base="brevecomb" xOffset="444" yOffset="-64"/>
   </outline>
 </glyph>

@@ -2,6 +2,8 @@ languagesystem DFLT dflt;
 languagesystem latn dflt;
 languagesystem latn ROM;
 languagesystem latn MOL;
+languagesystem latn TRK;
+languagesystem latn AZE;
 
 @TopMarks = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hungarumlautcomb macroncomb ringcomb tildecomb];
 @Figures = [zero one two three four five six seven eight nine];
@@ -9,7 +11,7 @@ languagesystem latn MOL;
 
 feature ccmp {
   lookup DotlessBeforeTopMarks {
-    sub [i j]' @TopMarks by [dotlessi uni0237];
+    sub [i j I J]' @TopMarks by [dotlessi uni0237 dotlessi uni0237];
   } DotlessBeforeTopMarks;
 } ccmp;
 
@@ -19,6 +21,10 @@ feature locl {
   sub [Scedilla scedilla uni0162 uni0163] by [uni0218 uni0219 uni021A uni021B];
   language MOL;
   sub [Scedilla scedilla uni0162 uni0163] by [uni0218 uni0219 uni021A uni021B];
+  language TRK;
+  sub I by dotlessi;
+  language AZE;
+  sub I by dotlessi;
 } locl;
 
 feature tnum {

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="uni021A" format="2">
-  <advance width="686"/>
+  <advance width="677"/>
   <unicode hex="021A"/>
   <outline>
-    <component base="T"/>
-    <component base="commaaccentcomb" xOffset="235" yOffset="19"/>
+    <component base="t"/>
+    <component base="commaaccentcomb" xOffset="203" yOffset="19"/>
   </outline>
 </glyph>

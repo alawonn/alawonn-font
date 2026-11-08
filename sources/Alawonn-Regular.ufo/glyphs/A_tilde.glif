@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="Atilde" format="2">
-  <advance width="968"/>
+  <advance width="767"/>
   <unicode hex="00C3"/>
   <outline>
-    <component base="A"/>
-    <component base="tildecomb" xOffset="623" yOffset="67"/>
+    <component base="a"/>
+    <component base="tildecomb" xOffset="458" yOffset="-113"/>
   </outline>
 </glyph>
