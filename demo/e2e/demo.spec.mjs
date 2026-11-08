@@ -225,7 +225,7 @@ test.describe("visual", () => {
       await page.setViewportSize({ width: 1280, height: 900 });
       await open(page);
       await expect(page.locator(".hero-word")).toHaveScreenshot(`hero-${theme}.png`);
-      await expect(page.locator("#alphabet-title + p")).toHaveScreenshot(`uppercase-${theme}.png`);
+      await expect(page.locator("#alphabet-title + p")).toHaveScreenshot(`alphabet-${theme}.png`);
       await expect(page.locator(".accents")).toHaveScreenshot(`accents-${theme}.png`);
       await expect(page.locator(".combining")).toHaveScreenshot(`combining-${theme}.png`);
     });
