@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="igrave" format="2">
-  <advance width="255"/>
+  <advance width="363"/>
   <unicode hex="00EC"/>
   <outline>
     <component base="dotlessi"/>
-    <component base="gravecomb" xOffset="135" yOffset="-143"/>
+    <component base="gravecomb" xOffset="276" yOffset="-61"/>
   </outline>
 </glyph>

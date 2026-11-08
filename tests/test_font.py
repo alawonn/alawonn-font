@@ -181,7 +181,7 @@ class FontTest(unittest.TestCase):
         self.assertEqual(len(advances), 1)
 
     def test_kerning_is_applied(self) -> None:
-        for pair in ("To", "AV", "Yo", "LT"):
+        for pair in ("To", "Ta", "Fo", "ra"):
             kerned = sum(advance for _, advance, _, _ in shape(pair))
             plain = sum(advance for _, advance, _, _ in shape(pair, {"kern": False}))
             self.assertLess(kerned, plain, pair)

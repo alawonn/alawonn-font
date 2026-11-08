@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="Gcircumflex" format="2">
-  <advance width="819"/>
+  <advance width="988"/>
   <unicode hex="011C"/>
   <outline>
     <component base="G"/>
-    <component base="circumflexcomb" xOffset="375" yOffset="87"/>
+    <component base="circumflexcomb" xOffset="629" yOffset="94"/>
   </outline>
 </glyph>
