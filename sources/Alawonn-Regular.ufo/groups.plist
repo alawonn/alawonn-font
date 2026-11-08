@@ -44,12 +44,10 @@
       <string>Gbreve</string>
       <string>Gcircumflex</string>
       <string>Gdotaccent</string>
-      <string>Q</string>
       <string>g</string>
       <string>gbreve</string>
       <string>gcircumflex</string>
       <string>gdotaccent</string>
-      <string>q</string>
       <string>uni0122</string>
       <string>uni0123</string>
     </array>
@@ -168,19 +166,24 @@
     </array>
     <key>public.kern1.K25</key>
     <array>
-      <string>question</string>
+      <string>Q</string>
+      <string>q</string>
     </array>
     <key>public.kern1.K26</key>
+    <array>
+      <string>question</string>
+    </array>
+    <key>public.kern1.K27</key>
     <array>
       <string>quotedblleft</string>
       <string>quoteleft</string>
     </array>
-    <key>public.kern1.K27</key>
+    <key>public.kern1.K28</key>
     <array>
       <string>quotedblright</string>
       <string>quoteright</string>
     </array>
-    <key>public.kern1.K28</key>
+    <key>public.kern1.K29</key>
     <array>
       <string>R</string>
       <string>Racute</string>
@@ -191,7 +194,11 @@
       <string>uni0156</string>
       <string>uni0157</string>
     </array>
-    <key>public.kern1.K29</key>
+    <key>public.kern1.K3</key>
+    <array>
+      <string>colon</string>
+    </array>
+    <key>public.kern1.K30</key>
     <array>
       <string>S</string>
       <string>Sacute</string>
@@ -206,27 +213,23 @@
       <string>uni0218</string>
       <string>uni0219</string>
     </array>
-    <key>public.kern1.K3</key>
-    <array>
-      <string>colon</string>
-    </array>
-    <key>public.kern1.K30</key>
+    <key>public.kern1.K31</key>
     <array>
       <string>semicolon</string>
     </array>
-    <key>public.kern1.K31</key>
+    <key>public.kern1.K32</key>
     <array>
       <string>seven</string>
     </array>
-    <key>public.kern1.K32</key>
+    <key>public.kern1.K33</key>
     <array>
       <string>six</string>
     </array>
-    <key>public.kern1.K33</key>
+    <key>public.kern1.K34</key>
     <array>
       <string>slash</string>
     </array>
-    <key>public.kern1.K34</key>
+    <key>public.kern1.K35</key>
     <array>
       <string>T</string>
       <string>Tcaron</string>
@@ -237,15 +240,15 @@
       <string>uni021A</string>
       <string>uni021B</string>
     </array>
-    <key>public.kern1.K35</key>
+    <key>public.kern1.K36</key>
     <array>
       <string>three</string>
     </array>
-    <key>public.kern1.K36</key>
+    <key>public.kern1.K37</key>
     <array>
       <string>two</string>
     </array>
-    <key>public.kern1.K37</key>
+    <key>public.kern1.K38</key>
     <array>
       <string>U</string>
       <string>Uacute</string>
@@ -270,17 +273,10 @@
       <string>uring</string>
       <string>utilde</string>
     </array>
-    <key>public.kern1.K38</key>
+    <key>public.kern1.K39</key>
     <array>
       <string>V</string>
       <string>v</string>
-    </array>
-    <key>public.kern1.K39</key>
-    <array>
-      <string>W</string>
-      <string>Wcircumflex</string>
-      <string>w</string>
-      <string>wcircumflex</string>
     </array>
     <key>public.kern1.K4</key>
     <array>
@@ -288,10 +284,17 @@
     </array>
     <key>public.kern1.K40</key>
     <array>
+      <string>W</string>
+      <string>Wcircumflex</string>
+      <string>w</string>
+      <string>wcircumflex</string>
+    </array>
+    <key>public.kern1.K41</key>
+    <array>
       <string>X</string>
       <string>x</string>
     </array>
-    <key>public.kern1.K41</key>
+    <key>public.kern1.K42</key>
     <array>
       <string>Y</string>
       <string>Yacute</string>
@@ -302,7 +305,7 @@
       <string>ycircumflex</string>
       <string>ydieresis</string>
     </array>
-    <key>public.kern1.K42</key>
+    <key>public.kern1.K43</key>
     <array>
       <string>Z</string>
       <string>Zacute</string>
@@ -313,7 +316,7 @@
       <string>zcaron</string>
       <string>zdotaccent</string>
     </array>
-    <key>public.kern1.K43</key>
+    <key>public.kern1.K44</key>
     <array>
       <string>nine</string>
       <string>zero</string>
